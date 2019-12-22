@@ -1,0 +1,56 @@
+
+
+users:1 million+
+tb:data volume
+perf:microseconds
+req rate:millions
+access:mobilr,iot,devices,
+scale:up-out-in
+economics:pay as u go
+
+low latency
+high concurency
+manage data in memory
+
+
+
+yum update
+sudo amazon-linux-extras install redis4.0
+yum install redis4.0
+redis-cli -h bismillah.nx10db.ng.0001.aps1.cache.amazonaws.com
+
+
+ZADD leaderboard 132 Robert
+ZADD leaderboard 231 Sandra
+ZADD leaderboard 32 June
+ZADD leaderboard 381 Adam
+			
+ZREVRANGEBYSCORE leaderboard +inf -inf
+1) Adam
+2) Sandra
+3) Robert
+4) June
+
+ZADD leaderboard 232 June
+
+ZREVRANGEBYSCORE leaderboard +inf -inf
+1) Adam
+2) June
+3) Sandra
+4) Robert
+ 
+stackoverflow…datastore no.7 redis
+
+step1 add a security group 
+one for REdis  with Custom TCP  and port 6379 and source of another
+ SG Webserver with its groupid as source...
+Step2 
+Go to Elasticache service
+Click on cache subnet groups->create cache subnet group
+
+Step3
+Elasticache dashboard
+Click on redis->disable replica(in real ul enable)
+Type t2->cache subnet grp(select the created one)->no pref
+->vpc security the redis one
+->no pref->disable sns->next review
